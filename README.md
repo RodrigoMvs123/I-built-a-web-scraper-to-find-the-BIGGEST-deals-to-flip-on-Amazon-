@@ -1,10 +1,10 @@
 I built a web scraper to find the BIGGEST deals to flip on Amazon $$$
-
+##
 https://www.youtube.com/watch?v=2hSC2HaPJDA 
 
 https://raw.githubusercontent.com/RodrigoMvs123/I-built-a-web-scraper-to-find-the-BIGGEST-deals-to-flip-on-Amazon-/main/README.md
 
-
+https://github.com/RodrigoMvs123/I-built-a-web-scraper-to-find-the-BIGGEST-deals-to-flip-on-Amazon-/blame/main/README.md
 
 OxyLabs
 https://oxylabs.io/ 
