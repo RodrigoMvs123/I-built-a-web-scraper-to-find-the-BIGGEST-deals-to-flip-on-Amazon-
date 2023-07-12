@@ -14,7 +14,7 @@ https://developers.oxylabs.io/scraper-apis/e-commerce-scraper-api
 Amazon 
 https://developers.oxylabs.io/scraper-apis/e-commerce-scraper-api/amazon 
 
-##
+---
 React App ( react-amazon-deal-finder )
 Visual Studio Code
 Terminal
@@ -22,7 +22,7 @@ npx create-react-app my-app
 cd my-app
 npm start
 ( localhost:3000 )
-##
+---
 Visual Studio Code
 Explorer
 OPEN EDITORS 
