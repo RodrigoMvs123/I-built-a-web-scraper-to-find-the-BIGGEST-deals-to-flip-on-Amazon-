@@ -1,92 +1,94 @@
-I built a web scraper to find the BIGGEST deals to flip on Amazon $$$
-##
-https://www.youtube.com/watch?v=2hSC2HaPJDA 
+## I built a web scraper to find the BIGGEST deals to flip on Amazon $$$
 
-https://raw.githubusercontent.com/RodrigoMvs123/I-built-a-web-scraper-to-find-the-BIGGEST-deals-to-flip-on-Amazon-/main/README.md
+- https://www.youtube.com/watch?v=2hSC2HaPJDA 
 
-https://github.com/RodrigoMvs123/I-built-a-web-scraper-to-find-the-BIGGEST-deals-to-flip-on-Amazon-/blame/main/README.md
+- https://raw.githubusercontent.com/RodrigoMvs123/I-built-a-web-scraper-to-find-the-BIGGEST-deals-to-flip-on-Amazon-/main/README.md
 
-OxyLabs
-https://oxylabs.io/ 
+- https://github.com/RodrigoMvs123/I-built-a-web-scraper-to-find-the-BIGGEST-deals-to-flip-on-Amazon-/blame/main/README.md
 
-E-Commerce Scraper API
-https://developers.oxylabs.io/scraper-apis/e-commerce-scraper-api 
-Amazon 
-https://developers.oxylabs.io/scraper-apis/e-commerce-scraper-api/amazon 
+### OxyLabs
+- https://oxylabs.io/ 
 
-React App ( react-amazon-deal-finder )
-Visual Studio Code
-Terminal
+### E-Commerce Scraper API
+- https://developers.oxylabs.io/scraper-apis/e-commerce-scraper-api 
+- Amazon: https://developers.oxylabs.io/scraper-apis/e-commerce-scraper-api/amazon 
+
+### React App (react-amazon-deal-finder)
+
+#### Visual Studio Code Terminal
+```bash
 npx create-react-app my-app
 cd my-app
 npm start
-( localhost:3000 )
+```
+(localhost:3000)
 
-Visual Studio Code
-Explorer
+#### Visual Studio Code Explorer
 OPEN EDITORS 
 server.js
 
-server.js
+#### server.js (Initial)
+```javascript
 try {
        const body {
               
        }
-       await fetch(“”, {
-              method: “POST”,
+       await fetch("", {
+              method: "POST",
               body: JSON stringify(body),
               headers: {
-                     “Content-Type”: “application/json”
-                      “Authorization”: “Basic ” + 
+                     "Content-Type": "application/json"
+                      "Authorization": "Basic " + 
               }
        }
 } catch (err) {
        console.error(err)
 }
+```
 
-OxyLabs UI
+### OxyLabs UI
 
 E-Commerce Scraper-API
-Get started
-Start free trial
-Create your API user
-Username
-Password
-Create API user
-Close
+- Get started
+- Start free trial
+- Create your API user
+- Username
+- Password
+- Create API user
+- Close
 
-Visual Studio Code
-Explorer
+#### Visual Studio Code Explorer
 OPEN EDITORS 
 server.js
 
-server.js
+#### server.js (With API Configuration)
+```javascript
 const PORT 8000
-const express = require(‘express’)
-const cors = require(‘express’)
+const express = require('express')
+const cors = require('express')
 const app = express()
 
 app.use(cors())
 
-const username = “ecomcodewithania”
-const password = “2SmFGrUEYG4X”
+const username = "ecomcodewithania"
+const password = "2SmFGrUEYG4X"
 
-app.get(‘/deals’, async(req, res) => {
+app.get('/deals', async(req, res) => {
 try {
        const body {
-              “source”: “amazon_search”,
-               “domain”: “com”,
-               “query” : “deals of the day”
-               “parse”: true,
-               “pages”: 1
+              "source": "amazon_search",
+               "domain": "com",
+               "query" : "deals of the day"
+               "parse": true,
+               "pages": 1
        }
        
-       const response = await fetch(“https://realtime.oxylabs.io/v1/queries”, {
-              method: “POST”,
+       const response = await fetch("https://realtime.oxylabs.io/v1/queries", {
+              method: "POST",
               body: JSON stringify(body),
               headers: {
-                     “Content-Type”: “application/json”
-                      “Authorization”: “Basic ” + Buffer.from(`${username}:${password}`)toString(“base64”)
+                     "Content-Type": "application/json"
+                      "Authorization": "Basic " + Buffer.from(`${username}:${password}`)toString("base64")
               }
        })
        
@@ -99,79 +101,90 @@ try {
 })
 
 appListen(PORT, () => console.log(`Listening on port ${PORT}! `))
+```
 
-https://www.amazon.com/ref=footer_us 
-# “query” : “deals of the day”
+- https://www.amazon.com/ref=footer_us 
+- "query" : "deals of the day"
 
-Visual Studio Code
-Terminal 
+#### Visual Studio Code Terminal
+```bash
 npm i express cors
-package.json
+```
+
+#### package.json
+```json
 {
-   “dependencies”: {
-      “cors”: “^2.8.5”,
-      “express”: “^4.18.2”
+   "dependencies": {
+      "cors": "^2.8.5",
+      "express": "^4.18.2"
    }
 }
+```
 
+#### package.json (Scripts)
+```json
+"scripts": {
+   "start:frontend": "react-scripts start",
+   "start:backend": "nodemon server.js"
+}
+```
 
-package.json
-“scripts”
-   “start:frontend”: “react-scripts start”,
-   “start:backend”: “nodemon server.js”
-
-Visual Studio Code
-Terminal 
+#### Visual Studio Code Terminal
+```bash
 npm i nodemon 
 npm run start:backend
-localhost:8000/deals
+```
+
+#### localhost:8000/deals Response
+```json
 {
        results: [
        { 
               content:[Object],
-              created_at ‘2023-06-29 11:40:21’,
-              updated_at ‘2023-06-29’ 11:40:23’,
+              created_at '2023-06-29 11:40:21',
+              updated_at '2023-06-29' 11:40:23',
               page: 1, 
-              url: ‘https://www.amazon.com/s?k=deals%20of%20the%20day&page=1’,
-              job_id: ‘7080147981877391361’,
-              status_code: ‘200’,
-              parser_type: ‘’
+              url: 'https://www.amazon.com/s?k=deals%20of%20the%20day&page=1',
+              job_id: '7080147981877391361',
+              status_code: '200',
+              parser_type: ''
        }
    ]
 }
+```
 
-Visual Studio Code
-Explorer
+#### Visual Studio Code Explorer
 OPEN EDITORS 
 server.js
 
-server.js
+#### server.js (With Response Handling)
+```javascript
 const PORT 8000
-const express = require(‘express’)
-const cors = require(‘express’)
+const express = require('express')
+const cors = require('express')
 const app = express()
 
 app.use(cors())
 
-const username = “ecomcodewithania”
-const password = “2SmFGrUEYG4X”
+const username = "ecomcodewithania"
+const password = "2SmFGrUEYG4X"
 
-app.get(‘/deals’, async(req, res) => {
+app.get('/deals', async(req, res) => {
 try {
        const body {
-              “source”: “amazon_search”,
-               “domain”: “com”,
-               “query” : “deals of the day”
-               “parse”: true,
-               “pages”: 1
+              "source": "amazon_search",
+               "domain": "com",
+               "query" : "deals of the day"
+               "parse": true,
+               "pages": 1
        }
        
-       const response = await fetch(“https://realtime.oxylabs.io/v1/queries”, {
-              method: “POST”,
+       const response = await fetch("https://realtime.oxylabs.io/v1/queries", {
+              method: "POST",
               body: JSON stringify(body),
               headers: {
-                     “Content-Type”: “application/json”
-                      “Authorization”: “Basic ” + Buffer.from(`${username}:${password}`)toString(“base64”)
+                     "Content-Type": "application/json"
+                      "Authorization": "Basic " + Buffer.from(`${username}:${password}`)toString("base64")
               }
        })
        
@@ -188,16 +201,18 @@ try {
 })
 
 appListen(PORT, () => console.log(`Listening on port ${PORT}! `))
+```
 
-localhost:8000/deals
+#### localhost:8000/deals Response Structure
+```json
 {
        results: {
             -{ 
                -content: {
-                        url: “https://www.amazon.com/s?k-dealsoftheday&page=1”,
+                        url: "https://www.amazon.com/s?k-dealsoftheday&page=1",
                         page: 1,
                         pages: 1,
-                        query: “deals of the day”,
+                        query: "deals of the day",
                       - results: {
                             paid: [ ],
                           -organic: [
@@ -219,40 +234,40 @@ localhost:8000/deals
                                          is_amazons_choise:
                                          price_strikethrough: 26.99
                                    }
-…
+```
 
-Visual Studio Code
-Explorer
+#### Visual Studio Code Explorer
 OPEN EDITORS 
 server.js
 
-server.js
+#### server.js (With Data Processing)
+```javascript
 const PORT 8000
-const express = require(‘express’)
-const cors = require(‘express’)
+const express = require('express')
+const cors = require('express')
 const app = express()
 
 app.use(cors())
 
-const username = “ecomcodewithania”
-const password = “2SmFGrUEYG4X”
+const username = "ecomcodewithania"
+const password = "2SmFGrUEYG4X"
 
-app.get(‘/deals’, async(req, res) => {
+app.get('/deals', async(req, res) => {
 try {
        const body {
-              “source”: “amazon_search”,
-               “domain”: “com”,
-               “query” : “deals of the day”
-               “parse”: true,
-               “pages”: 1
+              "source": "amazon_search",
+               "domain": "com",
+               "query" : "deals of the day"
+               "parse": true,
+               "pages": 1
        }
        
-       const response = await fetch(“https://realtime.oxylabs.io/v1/queries”, {
-              method: “POST”,
+       const response = await fetch("https://realtime.oxylabs.io/v1/queries", {
+              method: "POST",
               body: JSON stringify(body),
               headers: {
-                     “Content-Type”: “application/json”
-                      “Authorization”: “Basic ” + Buffer.from(`${username}:${password}`)toString(“base64”)
+                     "Content-Type": "application/json"
+                      "Authorization": "Basic " + Buffer.from(`${username}:${password}`)toString("base64")
               }
        })
        
@@ -272,14 +287,17 @@ try {
 })
 
 appListen(PORT, () => console.log(`Listening on port ${PORT}! `))
+```
 
-Visual Studio Code
-Explorer 
+### Frontend Implementation
+
+#### Visual Studio Code Explorer
 OPEN EDITORS
 index.js
 App.js
 
-index.js
+#### index.js
+```javascript
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
@@ -291,8 +309,10 @@ root.render(
     <App />
   </React.StrictMode>
 )
+```
 
-App.js
+#### App.js (Initial)
+```javascript
 const App = () => {
   return (
     <div className="app">
@@ -302,23 +322,23 @@ const App = () => {
 }
 
 export default App;
+```
 
-Visual Studio Code
-Terminal 
+#### Visual Studio Code Terminal
+```bash
 npm run start:frontend
+```
 localhost:3000
 
-Visual Studio Code
-App.js
-
-App.js
-import { useState, useEffect } from “react”
+#### Visual Studio Code App.js (With API Integration)
+```javascript
+import { useState, useEffect } from "react"
 
 const App = () => {
        const [deals, setDeals] = useState (null)
        const getDeals = async () => {
               try {
-                     const response = await fetch(“http://localhost:8000/deals”, {method: “GET”})
+                     const response = await fetch("http://localhost:8000/deals", {method: "GET"})
                      const data = await response.json()
                      setDeals(data) 
               } catch err {
@@ -340,17 +360,18 @@ const App = () => {
 }
 
 export default App;
+```
 
-localhost:3000
+### Components Structure
 
-Visual Studio Code
-Explorer 
+#### Visual Studio Code Explorer
 OPEN EDITORS
 components 
 Header.js
 Card.js 
 
-Header.js
+#### Header.js (Initial)
+```javascript
 const header () => {
     return (
         <div>
@@ -360,11 +381,10 @@ const header () => {
 }
 
 export default Header
+```
 
-Visual Studio Code
-Card.js
-
-Card.js
+#### Card.js (Initial)
+```javascript
 const Card () => {
     return (
         <div>
@@ -374,12 +394,13 @@ const Card () => {
 }
 
 export default Card 
+```
 
-Visual Studio Code
-App.js
+### Integrating Components
 
-App.js
-import { useState, useEffect } from “react”
+#### App.js (With Components)
+```javascript
+import { useState, useEffect } from "react"
 import Card from "./components/Card"
 import Header from "./components/Header"
 
@@ -387,7 +408,7 @@ const App = () => {
        const [deals, setDeals] = useState (null)
        const getDeals = async () => {
               try {
-                     const response = await fetch(“http://localhost:8000/deals”, {method: “GET”})
+                     const response = await fetch("http://localhost:8000/deals", {method: "GET"})
                      const data = await response.json()
                      setDeals(data) 
               } catch err {
@@ -419,11 +440,12 @@ const App = () => {
 }
 
 export default App;
+```
 
-Visual Studio Code
-Card.js
+### Component Implementation
 
-Card.js
+#### Card.js (Complete)
+```javascript
 const Card ({ item }) => {
 
     const titleFormatted = item.title.slice(0,20)
@@ -449,13 +471,10 @@ const Card ({ item }) => {
 }
 
 export default Card
+```
 
-Visual Studio Code
-Explorer
-OPEN EDITORS
-Header.js
-
-Header.js
+#### Header.js (Complete)
+```javascript
 import logo from "../images/hand-shake-illustration-free-vector.jpg" 
 
 const header () => {
@@ -475,23 +494,24 @@ const header () => {
 }
 
 export default Header 
+```
 
-https://www.google.com/search?sxsrf=AB5stBh9AGtYC6Xbk2N3h0EVP4s5ZlQAfg:1689169814351&q=shake+hands&tbm=isch&sa=X&ved=2ahUKEwimnv_1p4mAAxVGlJUCHRWaDikQ0pQJegQIDRAB&biw=1366&bih=657&dpr=1#imgrc=nXSeKsgeozZpdM 
+### Resources
+- Logo Image: https://www.google.com/search?sxsrf=AB5stBh9AGtYC6Xbk2N3h0EVP4s5ZlQAfg:1689169814351&q=shake+hands&tbm=isch&sa=X&ved=2ahUKEwimnv_1p4mAAxVGlJUCHRWaDikQ0pQJegQIDRAB&biw=1366&bih=657&dpr=1#imgrc=nXSeKsgeozZpdM 
 
-Visual Studio Code
-Explorer 
+### Project Assets
+
+#### Visual Studio Code Explorer
 OPEN EDITORS
 images 
 
 images
-hand-shake-illustration-free-vector.jpg
+- hand-shake-illustration-free-vector.jpg
 
-Visual Studio Code
-Explorer
-OPEN EDITORS 
-index.css
+### Styling
 
-index.css
+#### index.css
+```css
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap');
 
 body {
@@ -640,52 +660,54 @@ button.primary:disabled {
     text-decoration: none;
     color: rgb(50, 41, 51);
 }
+```
 
-https://fonts.google.com/
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap'); 
+### Fonts
+- Google Fonts: https://fonts.google.com/
+- `@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap');`
 
-Visual Studio Code
-Explorer
-OPEN EDITORS
-src
-.env
+### Environment Configuration
 
-.env
+#### .env
+```
 USERNAME=ecomcodewithania
 PASSWORD=2SmFGrUEYG4X
+```
 
-Visual Studio Code
-Explorer
+### Server Implementation with Environment Variables
+
+#### Visual Studio Code Explorer
 OPEN EDITORS 
 server.js
 
-server.js
+#### server.js (Final)
+```javascript
 const PORT 8000
-const express = require(‘express’)
-const cors = require(‘express’)
+const express = require('express')
+const cors = require('express')
 const app = express()
-require(‘dotenv’).config()
+require('dotenv').config()
 
 app.use(cors())
 
 const username = process.env.USERNAME
 const password = process.env.PASSWORD
-app.get(‘/deals’, async(req, res) => {
+app.get('/deals', async(req, res) => {
 try {
        const body {
-              “source”: “amazon_search”,
-               “domain”: “com”,
-               “query” : “deals of the day”
-               “parse”: true,
-               “pages”: 1
+              "source": "amazon_search",
+               "domain": "com",
+               "query" : "deals of the day"
+               "parse": true,
+               "pages": 1
        }
        
-       const response = await fetch(“https://realtime.oxylabs.io/v1/queries”, {
-              method: “POST”,
+       const response = await fetch("https://realtime.oxylabs.io/v1/queries", {
+              method: "POST",
               body: JSON stringify(body),
               headers: {
-                     “Content-Type”: “application/json”
-                      “Authorization”: “Basic ” + Buffer.from(`${username}:${password}`)toString(“base64”)
+                     "Content-Type": "application/json"
+                      "Authorization": "Basic " + Buffer.from(`${username}:${password}`)toString("base64")
               }
        })
        
@@ -705,10 +727,12 @@ try {
 })
 
 appListen(PORT, () => console.log(`Listening on port ${PORT}! `))
+```
 
-https://www.npmjs.com/package/dotenv 
+### Dependencies
+- dotenv: https://www.npmjs.com/package/dotenv 
 
-Visual Studio Code
-Terminal 
+### Installation
+```bash
 npm i dotenv
-
+```
